@@ -7,9 +7,9 @@ package  main.java.co.za.cognify;
  *
  */
 public  class TemperatureConverter {
-    public  unitToSymbol;
-    public  unitFromSymbol;
-    public  quantity;
+    public char  unitToSymbol;
+    public char  unitFromSymbol;
+    public double quantity;
 
   public  TemperatureConverter( char unitToSymbol , char unitFromSymbol, double quantity){
 
@@ -25,13 +25,11 @@ public  class TemperatureConverter {
      * @param unitFromSymbol
      * @param quantity
      */
-  static  double convertingFromCalciusToFarenheit( char unitToSymbol , char unitFromSymbol, double quantity){
-      if(unitFromSymbol == 'C'){
-          double calcius = quantity *(9/5) + 32;
+  static  int convertingFromCalciusToFarenheit( char unitToSymbol , char unitFromSymbol, int quantity){
 
-          return res;
+      if(unitFromSymbol != 'C'){throw  new ArithmeticException("Invalid symbol");
+      return  Math.round((quantity *(9/5)) + 32)  ;
 
-      }
 
   }
   /**
@@ -40,12 +38,15 @@ public  class TemperatureConverter {
    * @param quantity
    *
    */
-   static  double convertingFromFarenheitTpCalcius( char unitToSymbol , char unitFromSymbol, double quantity){
-     if(unitFromSymbol == 'F'){
-         double  Fahrenheit = (quantity - 32) *(5/9);
 
-         return  Fahrenheit;
+     static  int convertingFromFarenheitTpCalcius( char unitToSymbol , char unitFromSymbol, int quantity){
 
-     }
-   }
-}
+          if(unitFromSymbol != 'F')throw  new ArithmeticException("Invalid symbol");
+          return  Math.round(quantity - 32) *(5/9);
+
+          }
+
+}}
+
+
+//convertingFromFarenheitTpCalcius
