@@ -1,7 +1,7 @@
 package  main.java.co.za.cognify;
 
 /**
- * TODO: create a Class to convert a Temperature
+ * 
  * @params {units}
  *
  *
@@ -27,26 +27,29 @@ public  class TemperatureConverter {
      */
   static  int convertingFromCalciusToFarenheit( char unitToSymbol , char unitFromSymbol, int quantity){
 
-      if(unitFromSymbol != 'C'){throw  new ArithmeticException("Invalid symbol");
-      return  Math.round((quantity *(9/5)) + 32)  ;
-
-
+      if(unitFromSymbol != 'C'){
+        
+        throw  new ArithmeticException("Invalid symbol");
   }
-  /**
+  
+  return  Math.round((quantity *(9/5)) + 32)  ;
+  
+
+}
+
+
+/**
    * @param unitToSymbol
    * @param unitFromSymbol
    * @param quantity
    *
    */
 
-     static  int convertingFromFarenheitTpCalcius( char unitToSymbol , char unitFromSymbol, int quantity){
+  static int  convertingFromFarenheitTpCalcius( char unitToSymbol , char unitFromSymbol, int quantity){
 
-          if(unitFromSymbol != 'F')throw  new ArithmeticException("Invalid symbol");
-          return  Math.round(quantity - 32) *(5/9);
+    if(unitFromSymbol != 'F')throw  new ArithmeticException("Invalid symbol");
+    return  Math.round(quantity - 32) *(5/9);
 
-          }
-
-}}
-
+  }}
 
 //convertingFromFarenheitTpCalcius
