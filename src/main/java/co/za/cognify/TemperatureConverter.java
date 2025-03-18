@@ -1,55 +1,49 @@
 package  main.java.co.za.cognify;
 
+import java.util.Scanner;
+
 /**
- * 
- * @params {units}
- *
- *
+ * @formular 
+ * C = (F − 32) × 5 ⁄ 9. 
  */
-public  class TemperatureConverter {
-    public char  unitToSymbol;
-    public char  unitFromSymbol;
-    public double quantity;
+  class TemperatureConverter {
 
-  public  TemperatureConverter( char unitToSymbol , char unitFromSymbol, double quantity){
+  public static void  main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+      
+        System.out.println("Enter symbol for conversion ()C or F");
+        String  tempSymbol = scanner.nextLine().toUpperCase(); // symbol from the user
+        System.out.println("Enter quanity");
+        int quantity = (scanner.nextInt()); // quanity from user
+        double  temperature  = 0;
 
-      this.unitToSymbol = unitToSymbol;
-      this. unitFromSymbol = unitFromSymbol;
-      this.quantity = quantity;
 
-  }
+        if(tempSymbol.equals("C")){
+            temperature = convertFromFahrenheitToCelsius(quantity , tempSymbol);
+          System.out.println("Temperature :" + temperature + "C");
+        }else if(tempSymbol.equals("F")){
+          temperature = convertFromCalciusToFahnherit(quantity, tempSymbol);
+          System.out.println("Temperature :" + temperature + "F");
+       
+        }
 
-    /**
-     *
-     * @param unitToSymbol
-     * @param unitFromSymbol
-     * @param quantity
-     */
-  static  int convertingFromCalciusToFarenheit( char unitToSymbol , char unitFromSymbol, int quantity){
-
-      if(unitFromSymbol != 'C'){
-        
-        throw  new ArithmeticException("Invalid symbol");
-  }
   
-  return  Math.round((quantity *(9/5)) + 32)  ;
+
+  }
+    
+    public static double convertFromFahrenheitToCelsius(int quanity , String toSymbol){
+    
+      return (quanity - 32.0) * (5.0/9.0);
+
+
+  }
+  public static double    convertFromCalciusToFahnherit(int quanity , String toSymbol){
+
+    return quanity *(9.0/5.0) + 32.0;
+
+
+  }
   
 
 }
 
-
-/**
-   * @param unitToSymbol
-   * @param unitFromSymbol
-   * @param quantity
-   *
-   */
-
-  static int  convertingFromFarenheitTpCalcius( char unitToSymbol , char unitFromSymbol, int quantity){
-
-    if(unitFromSymbol != 'F')throw  new ArithmeticException("Invalid symbol");
-    return  Math.round(quantity - 32) *(5/9);
-
-  }}
-
-//convertingFromFarenheitTpCalcius
